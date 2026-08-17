@@ -121,8 +121,8 @@ spec:
     ocp_version: "4.20"
     cluster_type: "multinode"
     control_plane_instance_count: 3
-    control_plane_cpu: null            # TBD — confirmed in infrastructure phase
-    control_plane_ram_gb: null         # TBD — confirmed in infrastructure phase
+    control_plane_cpu: 16
+    control_plane_ram_gb: 64
     worker_count: 0                    # compact cluster — control plane nodes also serve as workers
     worker_cpu: null
     worker_ram_gb: null

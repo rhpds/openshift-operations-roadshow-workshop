@@ -111,4 +111,13 @@ Pre-provisioned by automation:
 
 ## Infrastructure Requirements
 
-TBD -- confirmed in infrastructure phase
+- **Cloud provider:** CNV (default)
+- **Cluster type:** Multinode compact (3 control-plane nodes, 0 dedicated workers)
+- **OCP version:** 4.20
+- **Topology:** Per-student
+- **Sizing:** 3 control plane (16 CPU, 64GB RAM) — may need more resources given the number of pre-installed operators
+- **Automation approach:** Ansible
+- **AI/MaaS:** MaaS (frontier model — GPT-4 via Azure OpenAI for OpenShift Lightspeed). Justification: Lightspeed module requires GPT-4 for natural language cluster management queries.
+- **External services:** ldap.jumpcloud.com, Azure OpenAI, github.com, quay.io, registry.access.redhat.com
+- **AAP version:** N/A — AAP not used
+- **Non-GA products:** None (all products are GA)

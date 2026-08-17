@@ -1,0 +1,36 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: openshift-operations-roadshow-workshop
+  title: openshift-operations-roadshow-workshop
+  description: A multi-module workshop on OpenShift operations. Deep technical
+    background on core components and addons for OpenShift operations.
+  annotations:
+    ph.rhdp.io/content-type: lab
+    ph.rhdp.io/deployment-mode: rhdp_published
+    ph.rhdp.io/github-user: joshgav
+    ph.rhdp.io/owner: jgavant@redhat.com
+    ph.rhdp.io/migrated-repo: https://github.com/rhpds/openshift-days-ops-showroom
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: rhpds/openshift-operations-roadshow-workshop
+    ph.rhdp.io/created-at: 2026-08-17T13:59:01.539Z
+  tags:
+    - publishing-house
+    - lab
+    - rhdp-published
+    - migration
+  links:
+    - url: https://github.com/rhpds/openshift-operations-roadshow-workshop
+      title: Repository
+      icon: github
+    - url: https://devspaces.apps.ocpv-infra02.wdc07.infra.demo.redhat.com#https://github.com/rhpds/openshift-operations-roadshow-workshop
+      title: Open in DevSpaces
+      icon: catalog
+    - url: https://central-api-publishing-house.apps.ocpv-infra02.wdc07.infra.demo.redhat.com
+      title: Central
+      icon: dashboard
+spec:
+  type: content
+  lifecycle: experimental
+  owner: rhdp-team
+  system: publishing-house

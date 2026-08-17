@@ -38,60 +38,79 @@ spec:
     - id: module-01
       title: "Setup & Overview"
       duration_min: 20
+      status: not_started
     - id: module-02
       title: "Installation & Verification"
       duration_min: 10
+      status: not_started
     - id: module-03
       title: "Application Management Basics"
       duration_min: 20
+      status: not_started
     - id: module-04
       title: "Ingress & Load Balancing"
       duration_min: 25
+      status: not_started
     - id: module-05
       title: "Network Security"
       duration_min: 15
+      status: not_started
     - id: module-06
       title: "Debugging & Troubleshooting"
       duration_min: 15
+      status: not_started
     - id: module-07
       title: "GitOps - Declarative Cluster Management"
       duration_min: 15
+      status: not_started
     - id: module-08
       title: "Identity - LDAP"
       duration_min: 20
+      status: not_started
     - id: module-09
       title: "Identity - OIDC"
       duration_min: 20
+      status: not_started
     - id: module-10
       title: "Observability & Logging"
       duration_min: 40
+      status: not_started
     - id: module-11
       title: "Performance Tuning"
       duration_min: 20
+      status: not_started
     - id: module-12
       title: "Virtualization"
       duration_min: 25
+      status: not_started
     - id: module-13
       title: "Developer Hub"
       duration_min: 30
+      status: not_started
     - id: module-14
       title: "Lightspeed"
       duration_min: 20
+      status: not_started
     - id: module-15
       title: "ACM Multi-Cluster Management"
       duration_min: 30
+      status: not_started
     - id: module-16
       title: "Advanced Cluster Security"
       duration_min: 20
+      status: not_started
     - id: module-17
       title: "Secrets Management"
       duration_min: 25
+      status: not_started
     - id: module-18
       title: "Zero-Trust Workload Identity Manager"
       duration_min: 20
+      status: not_started
     - id: module-19
       title: "Wrap Up"
       duration_min: 5
+      status: not_started
   environment:
     platform: "ocp"
     topology: "per-student"
@@ -156,8 +175,46 @@ approval_checklist:
     prerequisites_verifiable: null
     assessment_strategy: ""
     catalog_gap: ""
-    design_overview: ""
-    module_summaries: []
+    design_overview: "A hands-on operations workshop covering 18 modules across the full breadth of OpenShift administration. Participants work through cluster verification, application lifecycle, networking, security, identity management, observability, virtualization, multi-cluster management, and developer tooling on a dedicated OpenShift 4.20+ compact cluster with pre-installed operators."
+    module_summaries:
+      - title: "Setup & Overview"
+        overview: "Introduces the workshop, verifies cluster access, and tours built-in OpenShift platform capabilities including monitoring, registry, ingress, MachineSets, and OperatorHub."
+      - title: "Installation & Verification"
+        overview: "Post-installation verification checks covering ClusterOperators, cluster version, MachineConfigPools, networking, storage provisioning, and etcd health."
+      - title: "Application Management Basics"
+        overview: "Core application lifecycle including deployment, TLS routes, horizontal scaling, self-healing, probes, rolling rollback, and PodDisruptionBudgets."
+      - title: "Ingress & Load Balancing"
+        overview: "OpenShift Ingress Controller configuration with TLS termination options, HTTP-to-HTTPS redirect, HSTS headers, and rate limiting."
+      - title: "Network Security"
+        overview: "OVN-Kubernetes network security with deny-all NetworkPolicy, cross-namespace rules, AdminNetworkPolicy, EgressFirewall, and EgressIP."
+      - title: "Debugging & Troubleshooting"
+        overview: "Six intentionally broken microservices covering ImagePullBackOff, CrashLoopBackOff, resource constraints, ConfigMap errors, selector mismatches, and SCC violations."
+      - title: "GitOps - Declarative Cluster Management"
+        overview: "ArgoCD for cluster configuration management with Git-based deployment, drift detection, resync, and self-healing."
+      - title: "Identity - LDAP"
+        overview: "LDAP identity provider integration with JumpCloud, group sync, and group-based RBAC across dev/test/prod projects."
+      - title: "Identity - OIDC"
+        overview: "Red Hat build of Keycloak deployment, OIDC integration, automatic group sync from token claims, and RBAC configuration."
+      - title: "Observability & Logging"
+        overview: "Full observability stack covering Prometheus metrics and dashboards, Alertmanager alerting with email notifications, Loki/Vector logging with S3 storage, and Tempo/OpenTelemetry distributed tracing."
+      - title: "Performance Tuning"
+        overview: "Application right-sizing using VPA recommendations, HPA horizontal autoscaling under load, and capacity planning."
+      - title: "Virtualization"
+        overview: "RHEL 9 VM provisioning via InstanceTypes, unified monitoring and networking, live migration, cloning, and snapshot/restore."
+      - title: "Developer Hub"
+        overview: "Software catalog with live Kubernetes data, golden path templates for self-service provisioning, operational troubleshooting, and Prometheus monitoring for RHDH."
+      - title: "Lightspeed"
+        overview: "OpenShift Lightspeed deployment with Azure OpenAI GPT-4 for concept learning, YAML generation, and natural language troubleshooting."
+      - title: "ACM Multi-Cluster Management"
+        overview: "RHACM for creating HCP clusters, multi-cluster application deployment via ArgoCD ApplicationSets, and GDPR governance policy enforcement."
+      - title: "Advanced Cluster Security"
+        overview: "RHACS compliance scanning against CIS, PCI-DSS, and STIG benchmarks with Policy-as-Code runtime enforcement and violation auditing."
+      - title: "Secrets Management"
+        overview: "HashiCorp Vault deployment via Helm with Kubernetes auth, Vault Agent Injector pattern, and External Secrets Operator pattern."
+      - title: "Zero-Trust Workload Identity Manager"
+        overview: "SPIFFE/SPIRE-based workload identity with mTLS for PostgreSQL, zero-trust enforcement, and automatic certificate rotation."
+      - title: "Wrap Up"
+        overview: "Brief conclusion with resource links for continued learning."
     rcars_overlap_pct: null
     rcars_top_matches: []
     rejections: []

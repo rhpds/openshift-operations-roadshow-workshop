@@ -215,8 +215,24 @@ approval_checklist:
         overview: "SPIFFE/SPIRE-based workload identity with mTLS for PostgreSQL, zero-trust enforcement, and automatic certificate rotation."
       - title: "Wrap Up"
         overview: "Brief conclusion with resource links for continued learning."
-    rcars_overlap_pct: null
-    rcars_top_matches: []
+    rcars_overlap_pct: 98
+    rcars_top_matches:
+      - title: "Hands-on lab with Red Hat OpenShift Platform Plus (2025)"
+        ci_name: "sandboxes-gpte.opp-hol.prod"
+        url: "https://catalog.demo.redhat.com/catalog?item=sandboxes-gpte.opp-hol.prod"
+        relevance_score: 98
+        why_it_fits: "Covers RHACS, RHACM, OpenShift GitOps, and OpenShift Virtualization with hands-on exercises spanning multi-cluster management, security policy enforcement, and VM lifecycle management."
+      - title: "Advanced Cluster Management for Kubernetes Demo"
+        ci_name: "published.ocp4-acm-demo.prod"
+        url: "https://catalog.demo.redhat.com/catalog?item=published.ocp4-acm-demo.prod"
+        relevance_score: 87
+        why_it_fits: "Covers RHACM multi-cluster management, OpenShift Virtualization fleet operations, GitOps with ArgoCD, governance policies, and multicluster observability."
+      - title: "Sovereign Cloud Architecture with OpenShift"
+        ci_name: "published.sovereign-cloud-lab.prod"
+        url: "https://catalog.demo.redhat.com/catalog?item=published.sovereign-cloud-lab.prod"
+        relevance_score: 84
+        why_it_fits: "Covers RHACM multi-cluster management, RHACS compliance scanning, OpenShift Virtualization, and GitOps with ArgoCD."
+    catalog_gap: "This roadshow covers the full breadth of OpenShift operations in a single workshop. No existing catalog item combines LDAP/OIDC identity management, full-stack observability (metrics + logging + tracing), performance tuning (VPA/HPA), debugging broken pods, secrets management with Vault/ESO, and ZTWIM zero-trust workload identity."
     rejections: []
 
   infra:

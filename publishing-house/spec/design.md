@@ -1,89 +1,114 @@
-# [Project Title]
-
-<!-- This file is the design document for your lab or demo. -->
-<!-- Fill in each section below, or run /rhdp-publishing-house to have the intake skill help. -->
-<!-- Sections marked with [brackets] are placeholders — replace with real content. -->
-<!-- The validation gate checks for all required sections before submission. -->
+# OpenShift Ops Day Roadshow
 
 ## Overview
 
-[2-3 sentences on what this lab or demo is and why it exists. Then a direct description of what participants will do — specific enough that someone reading this section immediately understands the content without interpretation. No flowery language. Example: "Participants will deploy a 3-tier application on OpenShift, configure autoscaling, and troubleshoot a simulated pod failure."]
+This is a hands-on operations workshop covering the full breadth of Red Hat OpenShift Container Platform administration. Participants work through 18 modules spanning cluster verification, application lifecycle management, networking, security, identity management, observability, virtualization, multi-cluster management, and developer experience tooling. Each participant receives a dedicated OpenShift 4.20+ compact cluster with pre-installed operators and works through CLI-driven exercises that configure, deploy, troubleshoot, and secure production-like workloads.
 
 ## Target Audience
 
-- **Role:** [Data scientists, platform engineers, developers, etc.]
-- **Experience level:** [Beginner, intermediate, or advanced]
-- **What they already know:** [Existing skills and knowledge]
-- **What they don't know:** [Skills this lab teaches]
+- **Role:** Platform Engineers, Site Reliability Engineers (SREs), Security Administrators, OpenShift Cluster Administrators
+- **Experience level:** Intermediate to Advanced
+- **What they already know:** Basic Kubernetes concepts (pods, deployments, services), CLI comfort with `oc`/`kubectl`, networking fundamentals (TLS, DNS, HTTP), authentication/authorization concepts, container basics
+- **What they don't know:** OpenShift-specific operational patterns including advanced ingress configuration, OVN-Kubernetes network policies, ArgoCD-based GitOps for cluster configuration, LDAP/OIDC identity provider integration, full-stack observability with Prometheus/Loki/Tempo, OpenShift Virtualization lifecycle management, RHACM multi-cluster governance, RHACS compliance scanning, and zero-trust workload identity
 
 ## Prerequisites
 
-- [What the learner must know or have completed before starting]
-- [Can the lab validate these automatically? Yes/No — brief explanation]
-
-<!-- If no prerequisites, write "None" -->
+- Cluster administrator access to a Red Hat OpenShift Container Platform 4.20+ cluster
+- Working knowledge of Kubernetes primitives (pods, deployments, services, namespaces)
+- Comfort with the `oc` CLI and YAML manifests
+- Basic understanding of TLS, DNS, and HTTP networking concepts
+- Familiarity with container images and registries
+- These prerequisites cannot be automatically validated; they are assumed based on participant role
 
 ## Learning Objectives
 
-1. [Action verb] [specific, measurable outcome]
-2. [Action verb] [specific, measurable outcome]
-3. [Action verb] [specific, measurable outcome]
-
-<!-- Scale to duration: up to 3 objectives per 45 min of content. Start with action verbs: Configure, Deploy, Create, Implement, Troubleshoot, Monitor, Scale. Each should be testable. NOT: Understand, Learn, Know. -->
+1. Verify post-installation cluster health including ClusterOperators, MachineConfigPools, networking, storage provisioning, and etcd metrics
+2. Deploy and scale applications with self-healing, rolling updates, readiness/liveness probes, and PodDisruptionBudgets
+3. Configure ingress routing with TLS termination, HSTS headers, and rate limiting via the OpenShift Ingress Controller
+4. Implement network security using NetworkPolicy, AdminNetworkPolicy, EgressFirewall, and EgressIP on OVN-Kubernetes
+5. Troubleshoot common pod failures including ImagePullBackOff, CrashLoopBackOff, resource constraints, and SCC violations
+6. Deploy declarative cluster configuration using ArgoCD with drift detection and self-healing
+7. Integrate LDAP and OIDC identity providers with group sync and role-based access control
+8. Configure full-stack observability across metrics, alerting, logging, and distributed tracing using Prometheus, Alertmanager, Loki, Vector, Tempo, and OpenTelemetry
+9. Implement horizontal and vertical pod autoscaling with capacity planning based on VPA recommendations
+10. Provision and manage virtual machines on OpenShift Virtualization with live migration, cloning, and snapshots
+11. Manage multi-cluster environments using RHACM with hosted control planes, ArgoCD ApplicationSets, and governance policies
+12. Secure workloads using RHACS compliance scanning, secrets management with HashiCorp Vault and External Secrets Operator, and SPIFFE/SPIRE zero-trust workload identity
 
 ## Content Type
 
-[Lab (hands-on) or Demo (presenter-led)]
+Lab (hands-on)
 
 ## Products & Technologies
 
-- [Official Red Hat product name with version if relevant]
-- [Additional products/technologies]
-
-<!-- Use official names: "Red Hat OpenShift", not "OpenShift". List upstream projects separately. -->
+- Red Hat OpenShift Container Platform (4.20+)
+- Red Hat Advanced Cluster Security (RHACS)
+- Red Hat Advanced Cluster Management (RHACM)
+- Red Hat Developer Hub (RHDH)
+- Red Hat OpenShift GitOps (ArgoCD)
+- Red Hat OpenShift Virtualization (KubeVirt)
+- Red Hat OpenShift Data Foundation (ODF/NooBaa)
+- Red Hat build of Keycloak (RHBK)
+- Red Hat Enterprise Linux (RHEL 9) -- for VMs
+- OpenShift Lightspeed (OLS)
+- Zero Trust Workload Identity Manager (ZTWIM/SPIRE)
+- Prometheus / Alertmanager
+- Loki / Vector (Cluster Logging)
+- Tempo / Red Hat build of OpenTelemetry
+- OVN-Kubernetes / CoreDNS
+- HAProxy (Ingress Controller)
+- HashiCorp Vault
+- External Secrets Operator (ESO)
+- Helm
+- LDAP (JumpCloud)
+- Azure OpenAI (GPT-4)
+- PostgreSQL
+- Mailpit
 
 ## Module Map
 
 | Module | Title | Duration |
 |--------|-------|----------|
-| 1 | [Module title] | [XX min] |
-| 2 | [Module title] | [XX min] |
-| — | **Total hands-on** | **[X hours]** |
-| — | Intro / presentation | [~XX min] |
-| — | **Total lab** | **[~X hours]** |
-
-<!-- Each module 10-30 min. Total: lab 1-4 hours, demo 15-45 min. Modules should build on each other. -->
+| 1 | Setup & Overview | 20 min |
+| 2 | Installation & Verification | 10 min |
+| 3 | Application Management Basics | 20 min |
+| 4 | Ingress & Load Balancing | 25 min |
+| 5 | Network Security | 15 min |
+| 6 | Debugging & Troubleshooting | 15 min |
+| 7 | GitOps - Declarative Cluster Management | 15 min |
+| 8 | Identity - LDAP | 20 min |
+| 9 | Identity - OIDC | 20 min |
+| 10 | Observability & Logging | 40 min |
+| 11 | Performance Tuning | 20 min |
+| 12 | Virtualization | 25 min |
+| 13 | Developer Hub | 30 min |
+| 14 | Lightspeed | 20 min |
+| 15 | ACM Multi-Cluster Management | 30 min |
+| 16 | Advanced Cluster Security | 20 min |
+| 17 | Secrets Management | 25 min |
+| 18 | Zero-Trust Workload Identity Manager | 20 min |
+| 19 | Wrap Up | 5 min |
+| -- | **Total hands-on** | **390 min** |
+| -- | **Total lab** | **~6.5 hours** |
 
 ## Difficulty Level
 
-[Beginner, Intermediate, or Advanced]
+Intermediate
 
 ## Environment
 
-**Learner view:** [What exists when the lab starts — pre-deployed resources, what participants see and interact with. Be specific about cluster details.]
+**Learner view:** Each participant starts with a dedicated OpenShift 4.20+ compact cluster (3 nodes serving as both control plane and workers). The cluster has pre-installed operators including OpenShift Virtualization, RHACS, RHACM, OpenShift GitOps, Developer Hub, Lightspeed, Loki, Tempo, OpenTelemetry, Compliance Operator, VPA, Keycloak, ZTWIM, and ODF. Participants access the cluster via a web terminal and the OpenShift web console with cluster-admin credentials. Several demo applications and intentionally broken microservices are deployed during the exercises.
 
-**Automation needed:** [Yes/No]
+**Automation needed:** Yes
 
-[If yes, list what automation must provision — operators, per-user resources, sample apps, data sets.]
+Pre-provisioned by automation:
+- OpenShift 4.20+ cluster with compact 3-node topology
+- All required operators installed and configured (CNV, RHACS, RHACM, GitOps, RHDH, Lightspeed, Loki, Tempo, OTel, Compliance, VPA, Keycloak, ZTWIM, ODF)
+- JumpCloud LDAP integration credentials
+- Azure OpenAI API credentials for Lightspeed
+- HashiCorp Vault Helm chart accessible
+- Sample application images available via quay.io and registry.access.redhat.com
 
 ## Infrastructure Requirements
 
-- **Cloud provider:** [CNV (default), AWS, or Troshka (bare-metal/nested virt)]
-- **Cluster type:** [Multinode or SNO (Single Node OpenShift)]
-- **OCP version:** [e.g. 4.20 — minimum 4.20]
-- **Topology:** [Shared cluster, per-student, or CNV pool]
-- **Sizing:** [Node types and counts with resources — e.g., "3 control plane (16 CPU, 64GB RAM), 6 workers (8 CPU, 32GB RAM, 100GB disk)"]
-- **Automation approach:** [Ansible, GitOps (Helm + ArgoCD), or combo]
-- **AI/MaaS:** [None, MaaS (open-source model), MaaS (frontier model), or dedicated GPU — include justification if not "none"]
-- **External services:** [Named services — e.g., github.com, registry.access.redhat.com — or "None"]
-- **AAP version:** [e.g. 2.5 — only if AAP is in products; omit otherwise]
-- **Non-GA products:** [Product name + version, with access plan — or "None (all products are GA)"]
-
-<!-- Not all fields must be known at intake. "TBD, estimating ~X" is fine. -->
-
-## Assessment Strategy (Optional)
-
-<!-- Optional — skip this section for demos or classic labs without verification. -->
-<!-- Relevant for Zero-Touch labs with solve/validate buttons or labs with automated checks. -->
-
-[If applicable: how will we know the learner successfully completed each module? Per module: verification script, solve/validate button, visible result in the UI, or automated check.]
+TBD -- confirmed in infrastructure phase

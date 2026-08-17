@@ -20,43 +20,117 @@ project:
   workflow_id: "5d703d43-f92c-4de0-9119-05a35d0a1718"
 
 spec:
-  title: ""
-  learning_objectives: []
-  modules: []              # [{id, title, duration_min}] — written by intake Phase 4; id is stable (e.g. module-01)
+  title: "OpenShift Ops Day Roadshow"
+  learning_objectives:
+    - "Verify post-installation cluster health including ClusterOperators, MachineConfigPools, networking, storage provisioning, and etcd metrics"
+    - "Deploy and scale applications with self-healing, rolling updates, readiness/liveness probes, and PodDisruptionBudgets"
+    - "Configure ingress routing with TLS termination, HSTS headers, and rate limiting via the OpenShift Ingress Controller"
+    - "Implement network security using NetworkPolicy, AdminNetworkPolicy, EgressFirewall, and EgressIP on OVN-Kubernetes"
+    - "Troubleshoot common pod failures including ImagePullBackOff, CrashLoopBackOff, resource constraints, and SCC violations"
+    - "Deploy declarative cluster configuration using ArgoCD with drift detection and self-healing"
+    - "Integrate LDAP and OIDC identity providers with group sync and role-based access control"
+    - "Configure full-stack observability across metrics, alerting, logging, and distributed tracing using Prometheus, Alertmanager, Loki, Vector, Tempo, and OpenTelemetry"
+    - "Implement horizontal and vertical pod autoscaling with capacity planning based on VPA recommendations"
+    - "Provision and manage virtual machines on OpenShift Virtualization with live migration, cloning, and snapshots"
+    - "Manage multi-cluster environments using RHACM with hosted control planes, ArgoCD ApplicationSets, and governance policies"
+    - "Secure workloads using RHACS compliance scanning, secrets management with HashiCorp Vault and External Secrets Operator, and SPIFFE/SPIRE zero-trust workload identity"
+  modules:
+    - id: module-01
+      title: "Setup & Overview"
+      duration_min: 20
+    - id: module-02
+      title: "Installation & Verification"
+      duration_min: 10
+    - id: module-03
+      title: "Application Management Basics"
+      duration_min: 20
+    - id: module-04
+      title: "Ingress & Load Balancing"
+      duration_min: 25
+    - id: module-05
+      title: "Network Security"
+      duration_min: 15
+    - id: module-06
+      title: "Debugging & Troubleshooting"
+      duration_min: 15
+    - id: module-07
+      title: "GitOps - Declarative Cluster Management"
+      duration_min: 15
+    - id: module-08
+      title: "Identity - LDAP"
+      duration_min: 20
+    - id: module-09
+      title: "Identity - OIDC"
+      duration_min: 20
+    - id: module-10
+      title: "Observability & Logging"
+      duration_min: 40
+    - id: module-11
+      title: "Performance Tuning"
+      duration_min: 20
+    - id: module-12
+      title: "Virtualization"
+      duration_min: 25
+    - id: module-13
+      title: "Developer Hub"
+      duration_min: 30
+    - id: module-14
+      title: "Lightspeed"
+      duration_min: 20
+    - id: module-15
+      title: "ACM Multi-Cluster Management"
+      duration_min: 30
+    - id: module-16
+      title: "Advanced Cluster Security"
+      duration_min: 20
+    - id: module-17
+      title: "Secrets Management"
+      duration_min: 25
+    - id: module-18
+      title: "Zero-Trust Workload Identity Manager"
+      duration_min: 20
+    - id: module-19
+      title: "Wrap Up"
+      duration_min: 5
   environment:
-    platform: ""               # ocp | rhel-vms — determines which sizing fields apply
-    topology: ""               # shared-cluster | per-student | cnv-pool
-    cloud_provider: cnv        # cnv | aws | troshka — cnv is default
-    max_concurrent_users: null # required if topology = shared-cluster
+    platform: "ocp"
+    topology: "per-student"
+    cloud_provider: cnv
+    max_concurrent_users: null
 
     # --- OCP-specific fields (only when platform = ocp) ---
-    ocp_version: ""                    # e.g. 4.20 — minimum 4.20; leave empty for rhel-vms
-    cluster_type: ""                   # sno | multinode — only for platform = ocp
-    control_plane_instance_count: null # 1 if sno, 3 if multinode
-    control_plane_cpu: null            # 32 if sno, 16 if multinode
-    control_plane_ram_gb: null         # 128 if sno, 64 if multinode
-    worker_count: null                 # number of OCP worker nodes
-    worker_cpu: null                   # vCPU per worker
-    worker_ram_gb: null                # RAM per worker in GB
-    worker_disk_gb: null               # disk per worker in GB
+    ocp_version: "4.20"
+    cluster_type: "multinode"
+    control_plane_instance_count: 3
+    control_plane_cpu: null            # TBD — confirmed in infrastructure phase
+    control_plane_ram_gb: null         # TBD — confirmed in infrastructure phase
+    worker_count: 0                    # compact cluster — control plane nodes also serve as workers
+    worker_cpu: null
+    worker_ram_gb: null
+    worker_disk_gb: null
 
     # --- VM-specific fields (only when platform = rhel-vms) ---
     # Each entry: {role, count, cpu, ram_gb, disk_gb, os}
     vms_per_student: []
 
     # --- Common fields (both platforms) ---
-    aap_version: ""                    # required if AAP in products
-    ai_requirement: ""                 # maas | gpu | none
-    ai_model_tier: ""                  # open-source | frontier (if ai_requirement = maas or gpu)
-    ai_model_name: ""                  # specific model e.g. granite-3.1-8b
-    ai_justification: ""               # required if ai_model_tier = frontier or ai_requirement = gpu
-    non_ga_products: []                # list of non-GA products/versions
-    non_ga_access_plan: ""             # how access is provided for non-GA products
-    external_services: []              # named external service dependencies e.g. [github.com]
-    gpu_nodes: 0                       # number of GPU nodes (0 = none)
-    gpu_type: ""                       # e.g. NVIDIA A100 40GB (required if gpu_nodes > 0)
-  duration_hours: null
-  audience: ""               # beginner | intermediate | advanced
+    aap_version: ""                    # not applicable — AAP not used
+    ai_requirement: "maas"
+    ai_model_tier: "frontier"
+    ai_model_name: "gpt-4"
+    ai_justification: "OpenShift Lightspeed module requires GPT-4 via Azure OpenAI for natural language cluster management queries"
+    non_ga_products: []
+    non_ga_access_plan: ""
+    external_services:
+      - "ldap.jumpcloud.com"
+      - "Azure OpenAI"
+      - "github.com"
+      - "quay.io"
+      - "registry.access.redhat.com"
+    gpu_nodes: 0
+    gpu_type: ""
+  duration_hours: 6.5
+  audience: "intermediate"
 
 development:
   automation:

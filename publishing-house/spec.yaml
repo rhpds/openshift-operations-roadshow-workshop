@@ -141,7 +141,6 @@ spec:
     non_ga_products: []
     non_ga_access_plan: ""
     external_services:
-      - "ldap.jumpcloud.com (JumpCloud LDAP directory, port 636)"
       - "Azure OpenAI"
       - "github.com"
       - "quay.io"

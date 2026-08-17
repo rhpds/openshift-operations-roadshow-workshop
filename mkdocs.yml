@@ -1,0 +1,26 @@
+site_name: OpenShift Ops Day Roadshow
+docs_dir: publishing-house/spec
+nav:
+- Home: index.md
+- Design Spec: design.md
+- Modules:
+  - Module 1 - Setup Overview: modules/module-01-setup-overview.md
+  - Module 2 - Installation Verification: modules/module-02-installation-verification.md
+  - Module 3 - Application Management: modules/module-03-application-management.md
+  - Module 4 - Ingress Load Balancing: modules/module-04-ingress-load-balancing.md
+  - Module 5 - Network Security: modules/module-05-network-security.md
+  - Module 6 - Debugging Troubleshooting: modules/module-06-debugging-troubleshooting.md
+  - Module 7 - Gitops: modules/module-07-gitops.md
+  - Module 8 - Identity Ldap: modules/module-08-identity-ldap.md
+  - Module 9 - Identity Oidc: modules/module-09-identity-oidc.md
+  - Module 10 - Observability: modules/module-10-observability.md
+  - Module 11 - Performance Tuning: modules/module-11-performance-tuning.md
+  - Module 12 - Virtualization: modules/module-12-virtualization.md
+  - Module 13 - Developer Hub: modules/module-13-developer-hub.md
+  - Module 14 - Lightspeed: modules/module-14-lightspeed.md
+  - Module 15 - Acm: modules/module-15-acm.md
+  - Module 16 - Advanced Cluster Security: modules/module-16-advanced-cluster-security.md
+  - Module 17 - Secrets Management: modules/module-17-secrets-management.md
+  - Module 18 - Ztwim: modules/module-18-ztwim.md
+plugins:
+- techdocs-core

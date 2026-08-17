@@ -2,14 +2,14 @@
 
 ## Overview
 
-This is a hands-on operations workshop covering the full breadth of Red Hat OpenShift Container Platform administration. Participants work through 18 modules spanning cluster verification, application lifecycle management, networking, security, identity management, observability, virtualization, multi-cluster management, and developer experience tooling. Each participant receives a dedicated OpenShift 4.20+ compact cluster with pre-installed operators and works through CLI-driven exercises that configure, deploy, troubleshoot, and secure production-like workloads.
+This is a hands-on operations workshop covering the full breadth of Red Hat OpenShift Container Platform administration. Participants work through a selection of up to 18 modules spanning cluster verification, application management, networking, identity management, observability, virtualization, multi-cluster management, developer tools, and secrets management. Each participant receives a dedicated compact OpenShift cluster with pre-installed operators and works through exercises to configure, troubleshoot, and secure OpenShift capabilities.
 
 ## Target Audience
 
-- **Role:** Platform Engineers, Site Reliability Engineers (SREs), Security Administrators, OpenShift Cluster Administrators
+- **Role:** Platform Engineers, Site Reliability Engineers (SREs), Infrastructure Architects
 - **Experience level:** Intermediate to Advanced
 - **What they already know:** Basic Kubernetes concepts (pods, deployments, services), CLI comfort with `oc`/`kubectl`, networking fundamentals (TLS, DNS, HTTP), authentication/authorization concepts, container basics
-- **What they don't know:** OpenShift-specific operational patterns including advanced ingress configuration, OVN-Kubernetes network policies, ArgoCD-based GitOps for cluster configuration, LDAP/OIDC identity provider integration, full-stack observability with Prometheus/Loki/Tempo, OpenShift Virtualization lifecycle management, RHACM multi-cluster governance, RHACS compliance scanning, and zero-trust workload identity
+- **What they don't know:** OpenShift-specific operational patterns including advanced ingress configuration, OVN-Kubernetes network policies, ArgoCD-based GitOps for cluster configuration, LDAP/OIDC identity provider integration, full-stack observability with Prometheus/Loki/Tempo, OpenShift Virtualization lifecycle management, RHACM multi-cluster governance, RHACS compliance scanning, and secrets management with ESO and ZTWIM
 
 ## Prerequisites
 
@@ -42,28 +42,21 @@ Lab (hands-on)
 ## Products & Technologies
 
 - Red Hat OpenShift Container Platform (4.20+)
-- Red Hat Advanced Cluster Security (RHACS)
 - Red Hat Advanced Cluster Management (RHACM)
+- Red Hat Advanced Cluster Security (RHACS)
 - Red Hat Developer Hub (RHDH)
 - Red Hat OpenShift GitOps (ArgoCD)
+- Red Hat OpenShift Lightspeed (OLS)
 - Red Hat OpenShift Virtualization (KubeVirt)
+- Red Hat OpenShift Zero Trust Workload Identity Manager (ZTWIM/SPIRE)
 - Red Hat OpenShift Data Foundation (ODF/NooBaa)
 - Red Hat build of Keycloak (RHBK)
 - Red Hat Enterprise Linux (RHEL 9) -- for VMs
-- OpenShift Lightspeed (OLS)
-- Zero Trust Workload Identity Manager (ZTWIM/SPIRE)
-- Prometheus / Alertmanager
-- Loki / Vector (Cluster Logging)
-- Tempo / Red Hat build of OpenTelemetry
-- OVN-Kubernetes / CoreDNS
-- HAProxy (Ingress Controller)
+- Red Hat OpenShift Monitoring
+- Red Hat OpenShift Logging
+- Red Hat OpenShift Distributed Tracing
 - HashiCorp Vault
 - External Secrets Operator (ESO)
-- Helm
-- LDAP (JumpCloud)
-- Azure OpenAI (GPT-4)
-- PostgreSQL
-- Mailpit
 
 ## Module Map
 
@@ -97,7 +90,7 @@ Intermediate
 
 ## Environment
 
-**Learner view:** Each participant starts with a dedicated OpenShift 4.20+ compact cluster (3 nodes serving as both control plane and workers). The cluster has pre-installed operators including OpenShift Virtualization, RHACS, RHACM, OpenShift GitOps, Developer Hub, Lightspeed, Loki, Tempo, OpenTelemetry, Compliance Operator, VPA, Keycloak, ZTWIM, and ODF. Participants access the cluster via a web terminal and the OpenShift web console with cluster-admin credentials. Several demo applications and intentionally broken microservices are deployed during the exercises.
+**Learner view:** Each participant starts with a dedicated OpenShift compact cluster (3 nodes serving as both control plane and workers). The cluster has pre-installed operators including OpenShift Virtualization, RHACS, RHACM, OpenShift GitOps, Developer Hub, Lightspeed, Loki, Tempo, OpenTelemetry, Compliance Operator, VPA, Keycloak, ZTWIM, and ODF. Participants access the cluster via a web terminal and the OpenShift web console with cluster-admin credentials. Several demo applications and intentionally broken microservices are deployed during the exercises.
 
 **Automation needed:** Yes
 
